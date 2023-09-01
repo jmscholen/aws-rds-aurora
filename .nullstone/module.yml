@@ -1,0 +1,13 @@
+org_name: jmscholen
+name: aws-rds-aurora
+friendly_name: AWS Aurora RDS Enginer
+description: Create an AWS Aurora RDS Database
+category: datastore
+subcategory: ""
+provider_types:
+    - aws
+platform: mysql
+subplatform: ""
+type: ""
+appCategories: []
+is_public: true
