@@ -1,6 +1,6 @@
 org_name: jmscholen
 name: aws-rds-aurora
-friendly_name: AWS Aurora RDS Enginer
+friendly_name: AWS Aurora RDS Engine
 description: Create an AWS Aurora RDS Database
 category: datastore
 subcategory: ""
