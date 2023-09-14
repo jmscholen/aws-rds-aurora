@@ -9,18 +9,18 @@ output "db_master_secret_id" {
 }
 
 output "cluster_endpoint" {
-  value       = aws_rds_cluster.this[0].endpoint
+  value       = aws_rds_cluster.this.endpoint
   description = "Writer endpoint for the cluster"
 }
 
 # not implmenting yet
 # output "cluster_reader_endpoint" {
-  # value       = aws_rds_cluster.this[0].reader_endpoint
+  # value       = aws_rds_cluster.this.reader_endpoint
   # description = "A read-only endpoint for the cluster, automatically load-balanced across replicas"
 # }
 
 output "cluster_port" {
-  value       = aws_rds_cluster.this[0].port
+  value       = aws_rds_cluster.this.port
   description = "The database port"
 }
 
