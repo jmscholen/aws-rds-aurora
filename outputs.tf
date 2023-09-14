@@ -8,9 +8,20 @@ output "db_master_secret_id" {
   description = "string ||| The ID of the secret in AWS Secrets Manager containing the password"
 }
 
-output "db_endpoint" {
-  value       = aws_rds_cluster.this.endpoint
-  description = "string ||| The endpoint URL to access the mysql instance."
+output "cluster_endpoint" {
+  value       = aws_rds_cluster.this[0].endpoint
+  description = "Writer endpoint for the cluster"
+}
+
+# not implmenting yet
+# output "cluster_reader_endpoint" {
+  # value       = aws_rds_cluster.this[0].reader_endpoint
+  # description = "A read-only endpoint for the cluster, automatically load-balanced across replicas"
+# }
+
+output "cluster_port" {
+  value       = aws_rds_cluster.this[0].port
+  description = "The database port"
 }
 
 output "db_security_group_id" {
