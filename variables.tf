@@ -10,6 +10,12 @@ variable "instance_count" {
   description = "Number of instances to create"
 }
 
+variable "allocated_storage" {
+  type        = number
+  default     = 10
+  description = "Allocated storage in GB"
+}
+
 variable "engine" {
   type        = string
   default     = "auora-mysql"
