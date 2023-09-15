@@ -16,6 +16,7 @@ resource "aws_rds_cluster" "this" {
   backup_retention_period   = var.backup_retention_period
   preferred_backup_window   = "02:00-03:00"
   db_subnet_group_name      = aws_db_subnet_group.this.name
+  vpc_security_group_ids = [aws_security_group.this.id]
   
   final_snapshot_identifier = "${local.resource_name}-${replace(timestamp(), ":", "-")}"
   # iam_roles has been removed from this resource and instead will be used with aws_rds_cluster_role_association below to avoid conflicts per docs
