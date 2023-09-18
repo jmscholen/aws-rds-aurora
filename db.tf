@@ -13,7 +13,6 @@ resource "aws_rds_cluster" "this" {
   engine_mode               = var.engine_mode
   engine_version            = var.engine_version
   storage_encrypted         = true
-  allocated_storage         = var.allocated_storage
   backup_retention_period   = var.backup_retention_period
   preferred_backup_window   = "02:00-03:00"
   db_subnet_group_name      = aws_db_subnet_group.this.name
