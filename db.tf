@@ -1,6 +1,6 @@
 resource "aws_rds_cluster_instance" "cluster_instances" {
   count              = var.instance_count 
-  identifier         = "aurora-cluster-demo-${count.index}"
+  identifier         = "${local.resource_name}-instance-${count.index}"
   cluster_identifier = aws_rds_cluster.this.id
   instance_class     = var.instance_class
   engine             = aws_rds_cluster.this.engine
