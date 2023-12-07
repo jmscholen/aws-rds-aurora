@@ -8,6 +8,9 @@ resource "aws_security_group" "user" {
   vpc_id = local.vpc_id
   name   = "mysql-user/${local.resource_name}"
   tags   = merge(local.tags, { Name = "mysql-user/${local.resource_name}" })
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_security_group_rule" "this-from-user" {
