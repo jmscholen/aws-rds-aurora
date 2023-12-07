@@ -8,8 +8,9 @@ module "db_admin" {
   password = random_password.this.result
 
   network = {
-    vpc_id             = local.vpc_id
-    security_group_ids = [aws_security_group.user.id]
-    subnet_ids         = local.private_subnet_ids
+    vpc_id                  = local.vpc_id
+    mysql_security_group_id = local.mysql_security_group_id
+    security_group_ids      = [aws_security_group.user.id]
+    subnet_ids              = local.private_subnet_ids
   }
 }
